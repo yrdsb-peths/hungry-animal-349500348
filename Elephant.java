@@ -23,5 +23,6 @@ public class Elephant extends Actor
         {
             move(1);
         }
+        removeTouching(Apple.class);
     }
 }

@@ -18,9 +18,16 @@ public class Elephant extends Actor
     {
         for(int i = 0; i < 8; i++)
         {
-            idle[i] = new GreenfootImage("image/elephant_idle/idle" + i + " .png");
+            idle[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+            idle[i].scale(100, 100);
         }
         setImage(idle[0]);
+    }
+    int imageIndex = 0;
+    public void animateIdleElephant()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
     }
     public void act()
     {
@@ -34,7 +41,7 @@ public class Elephant extends Actor
             move(1);
         }
         eat();
-        
+        animateIdleElephant();
     }
     
     public void eat()

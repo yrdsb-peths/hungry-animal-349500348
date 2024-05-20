@@ -40,10 +40,11 @@ public class Elephant extends Actor
     int imageIndex = 0;
     public void animateIdleElephant()
     {
-        if(animationTimer.millisElapsed() < 300)
+        if(animationTimer.millisElapsed() < 150)
         {
             return;
         }
+        animationTimer.mark();
         if(facing.equals("right"))
         {
             setImage(idleRight[imageIndex]);

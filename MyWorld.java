@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel = new Label(0, 80);
+    int level = 1;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -30,6 +31,10 @@ public class MyWorld extends World
     {
         score++;
         scoreLabel.setValue(score);
+        if(score % 5 == 0)
+        {
+            level++;
+        }
     }
     public void gameOver()
     {
